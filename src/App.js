@@ -1,6 +1,17 @@
 // App.js
 import React from 'react'
+import { Header, Footer } from './layout';
+import { Music } from './pages'
 
-const App = () => <h1>Hello World!</h1>
+
+const App = () => {
+    return(
+        <>
+            <Header />
+            <Music />
+            <Footer />
+        </>
+    )
+};
 
 export default App

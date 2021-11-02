@@ -1,11 +1,12 @@
 nav {
     width: 100vw;
     position: fixed;
-    background-color: beige;
+    background-color: orange;
     padding: 30px;
     display: flex;
     justify-content: space-around;
-    color: grey;
+    color: white;
+    font-size: 1.5em;
 }
 
 a {
