@@ -70,6 +70,10 @@ export const Music = () => {
             . ~ Andy Kellman & Neil Z. Yeung, Rovi`
     }
   )
+
+  const [albums, ] = useState([
+      
+  ])
 //   const [ chosenStory, setChosenStory ] = useState({ id: 5541, Name: 'Beware the Frumious Bandersnatch', snippet: 'Twas brillig, and the slithy toves did gyre and gimble in the wabe.'});
 
 //   const handleStorySelect = storyId => {
@@ -78,19 +82,20 @@ export const Music = () => {
 //   };
 
   return(
-    <div className="news-reader">
+    <div className="Music-disp">
       <h1>Some music thing</h1>
 
-      <aside>
       
-        <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="newspapers"/>
-      </aside>
+        <article className="featuredArtistArea">
+            <img src="https://images.unsplash.com/photo-1432250767374-ee19cba37b52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2034&q=80" alt="newspapers"/>
+        
+            <ArtistCard idName="Artist Card" Artist={artist}/> 
+        </article>
 
-      <section>
-        <TopArtists Artists={artists} />
 
-        <ArtistCard Artist={artist}/> 
-      </section>
+        <TopArtists idName="topArtists" Artists={artists} />
+
+      
 
     </div>
   );
