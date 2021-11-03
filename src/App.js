@@ -1,14 +1,22 @@
 // App.js
 import React from 'react'
-
-import { Music } from './pages'
+import {Switch, Route} from "react-router-dom"
+import * as Pages from './pages'
 
 
 const App = () => {
+
     return(
         <>
 
-            <Music />
+        <Switch>
+            <Route exact path="/">
+                <Pages.Music />
+            </Route>
+            <Route path="/Album/">
+                <Pages.Album />
+            </Route>
+        </Switch>
 
         </>
     )

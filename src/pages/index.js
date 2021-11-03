@@ -1,1 +1,2 @@
-export { Music } from './Music/index'
+export { Music } from './Music'
+export { Album } from './Album'

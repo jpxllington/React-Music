@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TopArtists , ArtistCard } from '../../components/';
+import { TopArtists , ArtistCard, AlbumDetails } from '../../components/';
 import './style.css';
 
 export const Music = () => {
@@ -71,9 +71,19 @@ export const Music = () => {
     }
   )
 
-  const [albums, ] = useState([
-      
-  ])
+  const [albums, ] = useState(
+   [
+      {title: "Speak To Me", runtime: 1.04},
+      {title: "Breathe", runtime: 2.49},
+      {title: "On The Run", runtime:3.36},
+      {title: "Time", runtime:7.02},
+      {title: "The Great Gig In The Sky", runtime:4.44},
+      {title: "Money", runtime:6.33},
+      {title: "Us And Them", runtime:7.52},
+      {title: "Any Colour You Like", runtime:3.25},
+      {title: "Brain Damage", runtime:3.45},
+      {title: "Eclipse", runtime:1.54}
+   ])
 //   const [ chosenStory, setChosenStory ] = useState({ id: 5541, Name: 'Beware the Frumious Bandersnatch', snippet: 'Twas brillig, and the slithy toves did gyre and gimble in the wabe.'});
 
 //   const handleStorySelect = storyId => {
@@ -89,9 +99,10 @@ export const Music = () => {
         <article className="featuredArtistArea">
             <img src="https://images.unsplash.com/photo-1432250767374-ee19cba37b52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2034&q=80" alt="newspapers"/>
         
-            <ArtistCard idName="Artist Card" Artist={artist}/> 
+            <ArtistCard idName="ArtistCard" Artist={artist}/> 
         </article>
 
+        <AlbumDetails idName="AlbumDetails"Album={albums} />
 
         <TopArtists idName="topArtists" Artists={artists} />
 

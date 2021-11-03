@@ -9,6 +9,7 @@ img{
     width: 100vw;
     display: grid;
     grid-template-rows: 1fr 3fr 3fr;
+    grid-template-columns: 1fr 1fr
 }
 
 .featuredArtistArea{
@@ -16,11 +17,18 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 40vh;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 #artistProfile{
-    grid-row-start: 1;
+    grid-row-start: 3;
     grid-column-start: 1;
     max-height: 100%;
     overflow-y: scroll;
+}
+
+#AlbumDetails{
+    grid-column-start: 2;
+    grid-row-start: 2;
 }
