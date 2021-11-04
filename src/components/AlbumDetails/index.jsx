@@ -1,8 +1,11 @@
-import React from 'react';
+import React ,{ useState, useEffect } from 'react';
 import {Song} from "../Song"
 import { FaveButton } from '..';
+import axios from 'axios';
+
 
 export const AlbumDetails = ({Album}) => {
+
     return(
         <ol>
              {

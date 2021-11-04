@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { TopArtists , ArtistCard } from '../../components/';
+import { TopArtists , ArtistCard , AlbumDetails , LyricsCard } from '../../components/';
 import './style.css';
 
 export const Music = () => {
+
+  const [ artistId, setArtistId ] = useState({artist:'Kanye West', title:'Hurricane'});
 
   const [ artists, ] = useState([
     { id: 2503, Name: 'Pink Floyd', Album: 'The Dark Side Of The Moon'},
@@ -10,7 +12,24 @@ export const Music = () => {
     { id: 5541, Name: 'Drake', Album: 'Certified Lover Boy'}
   ])
 
-  const [artist,] = useState(
+  console.log(artistId);
+
+  const [ album, ] = useState([
+    {id:0,artist:"Kanye West",title: "Hurricane", runtime: 4.03},
+    {id:1,artist:"Koryn Hawthorne",title: "Speak To Me", runtime: 1.04}
+    // {id:1,title: "Speak To Me", runtime: 1.04},
+    // {id:2,title: "Breathe", runtime: 2.49},
+    // {id:3,title: "On The Run", runtime:3.36},
+    // {id:4,title: "Time", runtime:7.02},
+    // {id:5,title: "The Great Gig In The Sky", runtime:4.44},
+    // {id:6,title: "Money", runtime:6.33},
+    // {id:7,title: "Us And Them", runtime:7.52},
+    // {id:8,title: "Any Colour You Like", runtime:3.25},
+    // {id:9,title: "Brain Damage", runtime:3.45},
+    // {id:10,title: "Eclipse", runtime:1.54}
+])
+
+const [artist,] = useState(
     {
         Name: 'Kanye West',
         Profile: `One of the most influential and critically lauded artists of the early 21st century, Kanye West went from hip-hop beatmaker to worldwide hitmaker as his production work for artists such as led to a major-label recording contract and, ultimately, a wildly successful solo career that counted an unbroken string of chart-topping, multi-platinum albums and nearly two dozen Grammy Awards for classic sets like 2005's Late Registration, 2007's Graduation, and 2010's My Beautiful Dark Twisted Fantasy. Early on, West paired his beats with tongue-twisting raps and outspoken confidence. With a backpack and brightly colored polo shirt, his dapper fashion sense set him apart from many of his rap peers, while his attitude often came across as boastful and egotistical. This flamboyance made for good press, something that West enjoyed, for better or worse, throughout the course of his career. With his outsized personality, he courted plenty of controversy, posing for the cover of Rolling Stone as Jesus Christ, claiming that "George Bush doesn't care about black people" during a televised Hurricane Katrina fundraiser, and infamously interrupting an awards speech by in 2009. And yet, his steady presence in the celebrity limelight couldn't eclipse his musical talent. His production abilities seemed boundless, as he not only racked up impressive hits for himself (including number one singles "Gold Digger" and "Stronger") but also collaborated on smash hits with longtime collaborator (on their 2011 Watch the Throne track "Ni**as in Paris") and even (along with
@@ -87,13 +106,17 @@ export const Music = () => {
 
       
         <article className="featuredArtistArea">
-            <img src="https://images.unsplash.com/photo-1432250767374-ee19cba37b52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2034&q=80" alt="newspapers"/>
-        
-            <ArtistCard idName="Artist Card" Artist={artist}/> 
+            <img src="https://images.unsplash.com/photo-1432250767374-ee19cba37b52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2034&q=80" alt="newspapers"/>   
+
+            {/* <LyricsCard idName="Lyrics Card" data={'Pink Floyd','The Dark Side Of The Moon'}/>  */}
+            {/* <LyricsCard idName="Lyrics Card" artist={'Pink Floyd'} title={'The Dark Side Of The Moon'}/>  */}
+            <LyricsCard idName="Lyrics Card" album={artistId} />
         </article>
 
 
-        <TopArtists idName="topArtists" Artists={artists} />
+        <TopArtists Name="topArtists" Artists={artists} />
+
+        <AlbumDetails Album={album} />
 
       
 
